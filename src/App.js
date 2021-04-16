@@ -1,9 +1,12 @@
 import AboutUs from './pages/AboutUs'
-import AboutSection from './components/AboutSection';
+import GlobalStyle from './components/GlobalStyle'
 
 function App() {
   return (
-    <AboutUs />
+    <div>
+      <AboutUs />
+      <GlobalStyle />
+    </div>
   );
 }
 

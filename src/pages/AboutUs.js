@@ -7,8 +7,8 @@ function AboutUs() {
     return (
       <>
         <AboutSection />
-            <ServicesSection />
-            <FaqSection />
+        <ServicesSection />
+        <FaqSection />
       </>
     );
 }
