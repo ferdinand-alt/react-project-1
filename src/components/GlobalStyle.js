@@ -9,16 +9,18 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     background-color: rebeccapurple;
+    font-family: 'Inter', sans-serif;
 }
 
 button {
     font-weight: bold;
-    font-size: 1rem 2rem;
+    font-size: 1rem;
     border: 3px solid #23d997;
     background: transparent;
     color: white;
-    transition: all 0.5s ease;
     padding: 1rem 0.5rem;
+    font-family: inherit;
+    transition: all 0.5s ease;
     &:hover {
         background: #23d997;
         color: white;
