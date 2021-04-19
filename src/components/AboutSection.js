@@ -1,30 +1,30 @@
 import React from "react";
-import styled from "styled-components";
-import { About, Description, ImgAbout, Hide} from "../styles";
+import { About, Description, ImgAbout, Hide } from "../styles";
+// motion
+import { motion } from 'framer-motion';
+import {titleAnim, fade, photoAnim} from '../animation'
 
 const AboutSection = () => {
   return (
     <About>
       <Description>
-        <div className="title">
+        <motion.div>
           <Hide>
-            <h2>We make</h2>
+            <motion.h2 variants={titleAnim}>We make</motion.h2>
           </Hide>
           <Hide>
-            <h2>
+            <motion.h2 variants={titleAnim}>
               your <span>Dream</span> festival
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>safe again</h2>
+            <motion.h2 variants={titleAnim}>safe again</motion.h2>
           </Hide>
-        </div>
-        <p>
-         Lorem ipsum dolor sit amet.
-        </p>
-        <button>Contact us</button>
+        </motion.div>
+        <motion.p variants={fade}>Lorem ipsum dolor sit amet.</motion.p>
+        <motion.button variants={fade}>Contact us</motion.button>
       </Description>
-          <ImgAbout></ImgAbout>
+      <ImgAbout variants={photoAnim}></ImgAbout>
     </About>
   );
 };

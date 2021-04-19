@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import Dream from "./img/Dream-party.jpg";
-import Free from './img/Free-party.jpg'
+import dream from "./img/dream-party.jpg";
+import free from './img/free-party.jpg'
+import { motion } from "framer-motion";
 
 export const About = styled.div`
   min-height: 100vh;
@@ -21,8 +22,8 @@ export const Description = styled.div`
 
 
 // AboutSection.js achtergrond IMG
-export const ImgAbout = styled.div`
-  background-image: url(${Dream});
+export const ImgAbout = styled(motion.div)`
+  background-image: url(${dream});
   height: 800px;
   width: 500px;
   /* flex: 1; */
@@ -34,7 +35,7 @@ export const ImgAbout = styled.div`
 
 // ServicesSection.js achtergrond IMG
 export const ImgServices = styled.div`
-  background-image: url(${Free});
+  background-image: url(${free});
   height: 800px;
   width: 500px;
   /* flex: 1; */
