@@ -8,7 +8,14 @@ import safety from '../img/safety-corona.jpg';
 import { Link } from 'react-router-dom';
 // animations
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import {
+  pageAnimation,
+  fade,
+  photoAnim,
+  lineAnim,
+  slider,
+  sliderContainer,
+} from "../animation";
 
 const OurServices = () => {
     return (
@@ -18,18 +25,26 @@ const OurServices = () => {
         animate="show"
         exit="exit"
       >
+        <motion.div variants={sliderContainer}>
+          <Frame1 variants={slider}></Frame1>
+          <Frame2 variants={slider}></Frame2>
+          <Frame3 variants={slider}></Frame3>
+          <Frame4 variants={slider}></Frame4>
+        </motion.div>
         <Work>
-          <h2>Preperation</h2>
-          <div className="line"></div>
+          <motion.h2 variants={fade}>Preperation</motion.h2>
+          <motion.div variants={lineAnim} className="line"></motion.div>
           <Link to="/services/preperation">
-            <img src={empty} alt="festival" />
+            <motion.img variants={photoAnim} src={empty} alt="festival" />
           </Link>
         </Work>
         <Work>
           <h2>Security</h2>
           <div className="line"></div>
           <Link to="/services/security">
-            <img src={empty} alt="festival" />
+            <Hide>
+              <img src={empty} alt="festival" />
+            </Hide>
           </Link>
         </Work>
         <Work>
@@ -62,7 +77,7 @@ const Work = styled.div`
 padding-bottom: 10rem;
 .line {
     height: 0.5rem;
-    background-color: white;
+    background-color: coral;
     margin-bottom: 3rem;
 }
 img {
@@ -71,5 +86,30 @@ img {
     object-fit: cover;
 }
 `
+const Hide = styled.div`
+overflow: hidden;
+`
+
+// Frame Animation
+const Frame1 = styled(motion.div)`
+position: fixed;
+left: 0;
+/* zo dat het de nav niet bedekt */
+top: 10%;
+width: 100%;
+height: 100vh;
+background-color: #fffebf;
+z-index: 2;
+`
+const Frame2 = styled(Frame1)`
+background-color: #ff8efb;
+`
+const Frame3 = styled(Frame1)`
+  background-color: #8ed2ff;
+`;
+
+const Frame4 = styled(Frame1)`
+  background-color: #8effa0;
+`;
 
 export default OurServices

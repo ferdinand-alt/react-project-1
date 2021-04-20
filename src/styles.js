@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import dream from "./img/dream-party.jpg";
 import free from './img/free-party.jpg'
+import Wave from './img/wave.jpg'
 import { motion } from "framer-motion";
 
 export const About = styled.div`
@@ -20,6 +21,18 @@ export const Description = styled.div`
   }
 `;
 
+// About Section
+export const BackgroundImg = styled(motion.div)`
+  background-image: url(${Wave});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 0;
+  z-index: -1;
+`;
 
 // AboutSection.js achtergrond IMG
 export const ImgAbout = styled(motion.div)`
@@ -31,6 +44,7 @@ export const ImgAbout = styled(motion.div)`
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
+  z-index: 2;
 `;
 
 // ServicesSection.js achtergrond IMG

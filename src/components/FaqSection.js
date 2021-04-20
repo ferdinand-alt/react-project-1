@@ -1,45 +1,62 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import {About} from '../styles'
+import { About } from '../styles'
+import Toggle from './Toggle'
+// Neemt waar wanneer de layOut veranderd, zo ja? = animate
+import {AnimateSharedLayout} from 'framer-motion'
 
 function FaqSection() {
+ 
     return (
       <Faq>
         <h2>
           Questions <span>FAQ</span>
         </h2>
-        <div className="question">
-          <h4>What are the subsidy options?</h4>
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>Wich safety garanty can you give us?</h4>
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>In wich festivals, events are you specialised?</h4>
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>Are there restrictions?</h4>
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div className="faq-line"></div>
-        </div>
+        {/* je hebt nu toegang tot de children */}
+        <AnimateSharedLayout>
+          <Toggle title="How do I start?">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor sit amet.
+              </p>
+            </div>
+          </Toggle>
+        </AnimateSharedLayout>
+        <AnimateSharedLayout>
+          <Toggle title="Wich safety garanty can you give us?">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor sit amet.
+              </p>
+            </div>
+          </Toggle>
+        </AnimateSharedLayout>
+        <AnimateSharedLayout>
+          <Toggle title="In wich festivals, events are you specialised?">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor sit amet.
+              </p>
+            </div>
+          </Toggle>
+        </AnimateSharedLayout>
+        <AnimateSharedLayout>
+          <Toggle title="Are there restrictions?">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor sit amet.
+              </p>
+            </div>
+          </Toggle>
+        </AnimateSharedLayout>
       </Faq>
     );
 }

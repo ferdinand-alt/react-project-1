@@ -1,8 +1,9 @@
 import React from "react";
-import { About, Description, ImgAbout, Hide } from "../styles";
+import { About, Description, ImgAbout, Hide, BackgroundImg } from "../styles";
 // motion
 import { motion } from 'framer-motion';
-import {titleAnim, fade, photoAnim} from '../animation'
+import { titleAnim, fade, photoAnim, } from "../animation";
+import Wave from '../img/wave.jpg'
 
 const AboutSection = () => {
   return (
@@ -25,6 +26,7 @@ const AboutSection = () => {
         <motion.button variants={fade}>Contact us</motion.button>
       </Description>
       <ImgAbout variants={photoAnim}></ImgAbout>
+      <BackgroundImg variants={fade}></BackgroundImg>
     </About>
   );
 };
