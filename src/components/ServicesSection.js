@@ -3,11 +3,19 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faUsers, faMoneyBillWave, faHandshake } from "@fortawesome/free-solid-svg-icons"
 import { About, Description, ImgServices, Hide } from "../styles";
-
+import { fade } from '../animation'
+import { useScroll } from "./useScroll";
 
 function ServicesSection() {
-    return (
-      <Services>
+  const [element, controls] = useScroll();
+
+  return (
+
+    <Services
+      variants={fade}
+      animate={controls}
+      initial={'hidden'}
+      ref={element}>
         <Description>
           <h2>Our Services</h2>
           <Cards>

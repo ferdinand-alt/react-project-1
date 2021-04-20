@@ -4,7 +4,7 @@ import free from './img/free-party.jpg'
 import Wave from './img/wave.jpg'
 import { motion } from "framer-motion";
 
-export const About = styled.div`
+export const About = styled(motion.div)`
   min-height: 100vh;
   display: flex;
   align-items: center;

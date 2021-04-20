@@ -3,12 +3,18 @@ import styled from 'styled-components'
 import { About } from '../styles'
 import Toggle from './Toggle'
 // Neemt waar wanneer de layOut veranderd, zo ja? = animate
-import {AnimateSharedLayout} from 'framer-motion'
+import { AnimateSharedLayout } from 'framer-motion'
+import { useScroll } from './useScroll'
+import {scrollReveal} from '../animation'
 
 function FaqSection() {
- 
+  const [element, controls] = useScroll();
     return (
-      <Faq>
+      <Faq
+        variants={scrollReveal}
+        ref={element}
+        animate={controls}
+        initial='hidden'>
         <h2>
           Questions <span>FAQ</span>
         </h2>
@@ -62,31 +68,31 @@ function FaqSection() {
 }
 
 const Faq = styled(About)`
-display: block;
-span {
   display: block;
-}
-h2 {
-  padding-bottom: 2rem;
-  font-weight: lighter;
-}
-/* dit is de lijn */
-.faq-line {
-  background: white;
-  height: 0.2rem;
-  margin: 2rem 0rem;
-  width: 100%;
-}
-.question {
-  padding: 3rem 0rem;
-  cursor: pointer;
-}
-.answer {
-  padding: 2rem 0rem;
-  p {
-    padding: 1rem 0rem;
+  span {
+    display: block;
   }
-}
-`
+  h2 {
+    padding-bottom: 2rem;
+    font-weight: lighter;
+  }
+  /* dit is de lijn */
+  .faq-line {
+    background: white;
+    height: 0.2rem;
+    margin: 2rem 0rem;
+    width: 100%;
+  }
+  .question {
+    padding: 3rem 0rem;
+    cursor: pointer;
+  }
+  .answer {
+    padding: 2rem 0rem;
+    p {
+      padding: 1rem 0rem;
+    }
+  }
+`;
 
 export default FaqSection
