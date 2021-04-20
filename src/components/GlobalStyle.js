@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
 body {
     background-color: rebeccapurple;
     font-family: 'Inter', sans-serif;
+    /* niet naar rechts kunnen scrollen */
+    overflow-x: hidden;
 }
 
 button {

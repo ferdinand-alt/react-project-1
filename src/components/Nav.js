@@ -26,6 +26,9 @@ const Nav = () => {
 }
 
 const StyledNav = styled.nav`
+  position: sticky;
+  top:0;
+  z-index: 10;
   min-height: 10vh;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   display: flex;

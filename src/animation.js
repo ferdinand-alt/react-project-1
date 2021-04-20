@@ -11,8 +11,8 @@ export const pageAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      when: "beforeChildren",
+      duration: 1,
+      // when: "beforeChildren",
       staggerChildren: 0.25,
     },
   },
@@ -86,7 +86,7 @@ export const slider = {
   show: {
     x: '100%',
     skew: '0deg',
-    transition: {ease: "easeOut", duration: 1}
+    transition: { ease: "easeOut", duration: 0.5 },
   }
 }
 

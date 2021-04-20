@@ -16,8 +16,12 @@ import {
   slider,
   sliderContainer,
 } from "../animation";
+import { useScroll } from '../components/useScroll'
+import ScrollTop from "../components/ScrollTop";
 
 const OurServices = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
     return (
       <Works
         variants={pageAnimation}
@@ -31,16 +35,28 @@ const OurServices = () => {
           <Frame3 variants={slider}></Frame3>
           <Frame4 variants={slider}></Frame4>
         </motion.div>
-        <Work>
+        <Work
+          layout="position"
+          ref={element}
+          variants={fade}
+          initial="hidden"
+          animate={controls}
+        >
           <motion.h2 variants={fade}>Preperation</motion.h2>
           <motion.div variants={lineAnim} className="line"></motion.div>
           <Link to="/services/preperation">
             <motion.img variants={photoAnim} src={empty} alt="festival" />
           </Link>
         </Work>
-        <Work>
+        <Work
+          layout="position"
+          ref={element2}
+          variants={fade}
+          initial="hidden"
+          animate={controls2}
+        >
           <h2>Security</h2>
-          <div className="line"></div>
+          <motion.div variants={lineAnim} className="line"></motion.div>
           <Link to="/services/security">
             <Hide>
               <img src={empty} alt="festival" />
@@ -49,18 +65,19 @@ const OurServices = () => {
         </Work>
         <Work>
           <h2>Testing</h2>
-          <div className="line"></div>
+          <motion.div variants={lineAnim} className="line"></motion.div>
           <Link to="/services/testing">
             <img src={safety} alt="festival" />
           </Link>
         </Work>
         <Work>
           <h2>Consultancy</h2>
-          <div className="line"></div>
+          <motion.div variants={lineAnim} className="line"></motion.div>
           <Link to="/services/consultancy">
             <img src={organisation} alt="festival" />
           </Link>
         </Work>
+        <ScrollTop/>
       </Works>
     );
 }
@@ -73,7 +90,7 @@ h2 {
     padding: 1rem 0rem;
 }
 `
-const Work = styled.div`
+const Work = styled(motion.div)`
 padding-bottom: 10rem;
 .line {
     height: 0.5rem;
@@ -95,9 +112,9 @@ const Frame1 = styled(motion.div)`
 position: fixed;
 left: 0;
 /* zo dat het de nav niet bedekt */
-top: 10%;
+top: 0;
 width: 100%;
-height: 100vh;
+height: 100%;
 background-color: #fffebf;
 z-index: 2;
 `

@@ -4,6 +4,7 @@ import { About, Description, ImgAbout, Hide, BackgroundImg } from "../styles";
 import { motion } from 'framer-motion';
 import { titleAnim, fade, photoAnim, } from "../animation";
 import Wave from '../img/wave.jpg'
+import ScrollTop from '../components/ScrollTop'
 
 const AboutSection = () => {
   return (
@@ -27,6 +28,7 @@ const AboutSection = () => {
       </Description>
       <ImgAbout variants={photoAnim}></ImgAbout>
       <BackgroundImg variants={fade}></BackgroundImg>
+      <ScrollTop/>
     </About>
   );
 };
